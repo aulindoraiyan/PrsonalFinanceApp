@@ -1,99 +1,137 @@
 /* Centered container for the app */
 .dashboard-container {
-    width: 80%;
-  }
-  
-  /* General styling for headers within the app */
-  h1,
-  h2 {
-    color: #2c3e50;
+    width: 90%;
+    margin: auto; /* Center the dashboard */
+    background: #000; /* Black background */
+    border-radius: 10px;
+    box-shadow: 0 4px 30px rgba(255, 0, 0, 0.2); /* Red shadow for depth */
+    padding: 20px;
+}
+
+/* General styling for headers within the app */
+h1, h2 {
+    color: #00ffff; /* Neon blue color for contrast */
     text-align: center;
-  }
-  
-  /* Form and list container */
-  .form-container,
-  .list-container {
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+}
+
+/* Form and list container */
+.form-container, .list-container {
     margin-bottom: 20px;
-  }
-  
-  /* Common class for all buttons */
-  .button {
-    background-color: #3498db;
-    color: #ffffff;
+}
+.form-field {
+    display: flex; /* Use flexbox for alignment */
+    flex-direction: column; /* Stack label and input */
+    align-items: flex-start; /* Align items to the left */
+    margin-bottom: 20px; /* Space between fields */
+}
+
+/* Common class for all buttons */
+.button, .button-delete {
+    background-color: #2be8f6; /* Red color */
+    color: #ffffff; /* White text */
     border: none;
-    padding: 8px 15px;
+    padding: 10px 20px;
     margin: 5px;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.2s ease-in-out;
-  }
-  
-  .button:hover {
-    background-color: #2980b9;
-  }
-  .button-delete {
-    background-color: #343cdb;
-    color: #ffffff;
-    border: none;
-    padding: 8px 15px;
-    margin: 5px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.2s ease-in-out;
-  }
-  
-  .button-delete:hover {
-    background-color: #343cdb;
-  }
-  
-  /* Common class for all input fields and selects */
-  .input {
+    transition: all 0.3s ease-in-out;
+    font-family: 'Roboto', sans-serif;
+    box-shadow: 0 2px 5px rgba(255, 0, 0, 0.3); /* Red shadow */
+}
+
+.button:hover, .button-delete:hover {
+    transform: translateY(-2px); /* Lift effect on hover */
+    box-shadow: 0 4px 20px rgba(255, 0, 0, 0.5); /* Bright shadow on hover */
+}
+
+/* Common class for all input fields and selects */
+.input {
     width: 100%;
     padding: 10px;
+    max-width: 1000px;;
     margin-top: 5px;
     margin-bottom: 15px;
-    background-color: transparent;
-    border: 1px solid #ccc;
+    background-color: #1a1a1a; /* Dark input field */
+    border: 1px solid #ff0000; /* Red border */
     border-radius: 5px;
-    color: #3498db;
-  }
-  
-  /* Labels for better readability */
-  label {
+    color: #00ffff; /* Neon blue text */
+    transition: border-color 0.3s ease;
+}
+
+.input:focus {
+    border-color: #00ffff; /* Highlight border on focus */
+    outline: none; 
+}
+
+/* Labels for better readability */
+label {
     font-weight: 600;
     display: block;
     margin-bottom: 5px;
-  }
-  
-  .table-container {
+    color: #ffffff; /* White color for contrast */
+}
+
+.table-container {
     margin: 20px;
     overflow-x: auto; /* Enables horizontal scrolling if the table is too wide */
-  }
-  
-  .table {
+}
+
+.table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .table th,
-  .table td {
+    background-color: #000; /* Black table background */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 20px rgba(255, 0, 0, 0.2); /* Red shadow */
+}
+
+.table th, .table td {
     padding: 12px 15px;
-    border: 1px solid #ddd; /* Light grey border for cells */
+    border: 1px solid #333; /* Darker border for a more modern look */
     text-align: left;
-  }
-  
-  .table th {
-    background-color: #3498db; /* Darker blue header background */
-    color: white;
+}
+
+.table th {
+    background-color: #f5552e; /* Red header background */
+    color: #ffffff; /* White text */
     font-size: 16px;
+}
+
+.table tbody tr:nth-child(odd) {
+    background-color: #1a1a1a; /* Slightly lighter dark for odd rows */
+}
+
+.table tbody tr:hover {
+    background-color: rgba(0, 255, 255, 0.2); /* Neon blue hover effect for rows */
+}
+.glowing-button {
+    background-color: #1a1a1a; /* Button background color */
+    color: #00ffff; /* Text color */
+    border: 0px solid #00ffff; /* Border color */
+    padding: 10px 20px; /* Padding for the button */
+    border-radius: 8px; /* Rounded corners */
+    font-size: 1em; /* Font size */
+    cursor: pointer; /* Change cursor to pointer */
+    transition: all 0.3s ease; /* Smooth transition for effects */
+    box-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff, 0 0 20px #00ffff; /* Initial glow */
+}
+
+.glowing-button:hover {
+    background-color: #00ffff; /* Change background color on hover */
+    color: #1a1a1a; /* Change text color on hover */
+    box-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff; /* Increased glow on hover */
+}
+
+/* src/components/Chart.css */
+.chart-container {
+    display: flex;
+    justify-content: space-between;
   }
   
-  .table tbody tr:nth-child(odd) {
-    background-color: #f2f2f2; /* Zebra striping for rows, light grey */
+  .pie-chart, .line-chart {
+    width: 400px;
+    height: 400px;
   }
   
-  .table tbody tr:hover {
-    background-color: #e8f4f8; /* Light blue hover effect for rows */
-  }

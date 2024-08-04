@@ -2,7 +2,7 @@ import { useMemo, useState } from "react";
 import {
   FinancialRecord,
   useFinancialRecords,
-} from "../../contexts/financial-record-context";
+} from "../../context/financial-record-context";
 import { useTable, Column, CellProps } from "react-table";
 
 interface EditableCellProps extends CellProps<FinancialRecord> {
@@ -133,7 +133,7 @@ export const FinancialRecordList = () => {
       columns,
       data: records,
     });
-  
+
   return (
     <div className="table-container">
       <table {...getTableProps()} className="table">
@@ -147,7 +147,7 @@ export const FinancialRecordList = () => {
           ))}
         </thead>
         <tbody {...getTableBodyProps()}>
-          {rows.map((row) => {  // Remove idx since it's unused
+          {rows.map((row) => {
             prepareRow(row);
             return (
               <tr {...row.getRowProps()}>

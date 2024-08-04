@@ -9,25 +9,15 @@ interface FinancialRecord {
   paymentMethod: string;
 }
 
-// const financialRecordSchema = new mongoose.Schema<FinancialRecord>({
-//   userId: { type: String, required: true },
-//   date: { type: Date, required: true },
-//   description: { type: String, required: true },
-//   amount: { type: Number, required: true },
-//   category: { type: String, required: true },
-//   paymentMethod: { type: String, required: true },
-// });
-const financialRecordSchema = new mongoose.Schema<FinancialRecord>(
-    {
-      userId: { type: String, required: true },
-      date: { type: Date, required: true },
-      description: { type: String, required: true },
-      amount: { type: Number, required: true },
-      category: { type: String, required: true },
-      paymentMethod: { type: String, required: true },
-    },
-    { collection: 'financial_records' } // Specify the collection name explicitly
-  );
+const financialRecordSchema = new mongoose.Schema<FinancialRecord>({
+  userId: { type: String, required: true },
+  date: { type: Date, required: true },
+  description: { type: String, required: true },
+  amount: { type: Number, required: true },
+  category: { type: String, required: true },
+  paymentMethod: { type: String, required: true },
+});
+
   
 
 const FinancialRecordModel = mongoose.model<FinancialRecord>(

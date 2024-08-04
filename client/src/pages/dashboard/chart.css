@@ -1,0 +1,12 @@
+/* src/components/Chart.css */
+.chart-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+  }
+  
+  .pie-chart, .bar-chart {
+    width: 400px; /* Adjust width as needed */
+    height: 300px; /* Adjust height as needed */
+  }
+  

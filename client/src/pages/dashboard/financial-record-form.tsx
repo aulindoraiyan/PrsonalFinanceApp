@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useUser } from "@clerk/clerk-react";
-import { useFinancialRecords } from "../../contexts/financial-record-context";
-
+import { useFinancialRecords } from "../../context/financial-record-context";
+import "./financial-record.css";
 export const FinancialRecordForm = () => {
   const [description, setDescription] = useState<string>("");
   const [amount, setAmount] = useState<string>("");
@@ -13,7 +13,7 @@ export const FinancialRecordForm = () => {
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-
+    console.log("userId at this point" , user?.id);
     const newRecord = {
       userId: user?.id ?? "",
       date: new Date(),
@@ -84,7 +84,7 @@ export const FinancialRecordForm = () => {
             <option value="Bank Transfer">Bank Transfer</option>
           </select>
         </div>
-        <button type="submit" className="button">
+        <button type="submit" className="glowing-button">
           Add Record
         </button>
       </form>
